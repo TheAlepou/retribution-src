@@ -30,7 +30,7 @@ echo ===============================
 
 
 :main
-%CD%\Panda3D-1.10.0\python\ppython.exe -m pirates.piratesbase.PiratesStart
+C:\Panda3D-1.10.0\python\ppython.exe -m pirates.piratesbase.PiratesStart
 
 pause
 goto main
