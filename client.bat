@@ -4,7 +4,7 @@ title Pirates Game
 
 echo Choose your connection method!
 echo.
-echo 1 - fadeonline
+echo 1 - localhost
 echo.
 
 :selection
