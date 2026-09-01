@@ -1,7 +1,7 @@
 # Case Study: Pirates of the Caribbean Online — Server Source Code & Dependency Recovery
 
-**Category:** Fan Server Preservation / Legacy Dependency Matching  
-**Status:** Functional — tested on Windows and Apple Silicon (M1) with known issues documented  
+**Category:** Fan Server Preservation / Legacy Dependency  
+**Status:** Functional: tested on Windows and Apple Silicon (M1) with known issues documented  
 **Year Found:** 2024  
 
 ---
@@ -20,7 +20,7 @@ These three components must match exactly. Using the wrong version of either Ast
 
 ## How To Run It
 - Copy and paste the Panda3D-1.10.0 folder into C:\Panda3D-1.10.0
-- Add C:\Panda3D-1.10.0\bin and C:\Panda3D-1.10.0\python to your windows PATH **Make sure that the Python included is the default one. This game doesn't work on Python 3 ANDIT NEEDS TO BE THE VERSION INCLUDED WITH THE Panda3D-1.10.0 FOLDER, AS THIS VERSION OF Panda3D HAS VERY SPECIFIC POTCO RELATED FILES!**
+- Add C:\Panda3D-1.10.0\bin and C:\Panda3D-1.10.0\python to your windows PATH **Make sure that the Python included is the default one. This game doesn't work on Python 3 AND IT NEEDS TO BE THE VERSION INCLUDED WITH THE Panda3D-1.10.0 FOLDER, AS THIS VERSION OF Panda3D HAS VERY SPECIFIC POTCO RELATED FILES!**
 - Move the retribution-src folder into the C:\retribution-src
 - Download msvcr120.dll and paste in SysWOW64 and System32 (I'll include it eventually. *If you want to download it from elsewhere, search of it on Google.* **Astron and the server will NOT work without this DLL file.**)
 - Go to the retribution-src\win32 and run *astron.bat* then *ud.bat* and finally *ai.bat* **IN THAT EXACT ORDER**
@@ -50,20 +50,18 @@ The repository containing all three components had:
 - No documentation linking it to POTCO or POR by name in a searchable way
 - No cross-references from any known POTCO preservation community thread
 
-It was effectively invisible to standard search. Discovery required several days of iterative searching across GitHub, archived forum threads, and dead-linked community pages before the repository surfaced.
-
 This was not a well-known leak. At time of discovery, I was verifiably the first person to find it based on engagement metrics.
 
 ---
 
 ## The Dependency Problem
 
-POTCO's fan server stack is built on:
+POTCO's fan server is built on:
 
 - **Panda3D** — a game engine originally developed by Disney, later open-sourced. The fan server requires a *specific legacy build*, not the current release. The current release is incompatible.
 - **Astron** — a distributed server framework designed for Panda3D MMOs. Again, a specific legacy version is required.
 
-The version pinning is strict. This is not documented anywhere in an accessible, consolidated form. Matching the correct Astron version to the correct Panda3D build to the correct server source required cross-referencing fragments of information from multiple dead or semi-active community sources.
+The version pinning is strict. They must be the exact versions.
 
 ---
 
@@ -87,13 +85,21 @@ The M1 color distortion is an open problem. It does not prevent the server from 
 
 ---
 
-## Related Finds
+## Interesting Related Finds
 
-- **Toontown Open Level Editor** — fan server level editor, source code located and archived. Source https://github.com/TheAlepou/OpenLevelEditor
-- **Toontown Stride source code** — full server source located. Source: https://github.com/TheAlepou/ToontownStride
-- **Cog Invasion Online (CIO)** — source code + resources + specific Panda3D version located. CIO is a first-person shooter mod of Toontown capable of loading Half-Life BSP maps. BSP map import pipeline currently unresolved. Source: https://github.com/TheAlepou/cio-src https://github.com/TheAlepou/Open-CIO-Panda3D https://github.com/Cog-Invasion-Online https://github.com/Cog-Invasion-Online/cio-resources
+- **Toontown Open Level Editor:** fan server level editor, source code located and archived. Source https://github.com/TheAlepou/OpenLevelEditor
+- **Toontown Stride source code:** full server source located. Source: https://github.com/TheAlepou/ToontownStride
+- **Cog Invasion Online (CIO):** source code + resources + specific Panda3D version located. CIO is a first-person shooter mod of Toontown capable of loading Half-Life BSP maps. BSP map import pipeline currently unresolved. Sources:
+https://github.com/TheAlepou/cio-src
+
+https://github.com/TheAlepou/Open-CIO-Panda3D 
+
+https://github.com/Cog-Invasion-Online 
+
+https://github.com/Cog-Invasion-Online/cio-resources
+
 - **libpirates:** source code for a DLL file. Possibly useful. Source: https://github.com/TheAlepou/libpirates-src
 
 ---
 
-*Documentation by Luca — digital preservation hobbyist, legacy dependency recovery, rare software archival.*
+*Documentation by TheAlepou.*
